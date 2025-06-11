@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Ishika-bisht/static/css/main.ccb23fa0.css",
+    "main.js": "/Ishika-bisht/static/js/main.5706cef1.js",
+    "static/js/453.692062c3.chunk.js": "/Ishika-bisht/static/js/453.692062c3.chunk.js",
+    "static/media/Masoom.mp3": "/Ishika-bisht/static/media/Masoom.3f1e7df492755d5fb775.mp3",
+    "static/media/Sapphire.mp3": "/Ishika-bisht/static/media/Sapphire.98740fa3fc69c53cb624.mp3",
+    "static/media/Cheri-Cheri-Lady.mp3": "/Ishika-bisht/static/media/Cheri-Cheri-Lady.f0bae0b3f21f923bd35e.mp3",
+    "static/media/6.jpg": "/Ishika-bisht/static/media/6.cb1b7165f695df860f1b.jpg",
+    "static/media/4.jpg": "/Ishika-bisht/static/media/4.3d2d01bb5b23335d52fd.jpg",
+    "static/media/3.jpg": "/Ishika-bisht/static/media/3.5f7b9a1ae9a9ab36d5e4.jpg",
+    "static/media/5.jpg": "/Ishika-bisht/static/media/5.2760cc6e3f1bab3dca0d.jpg",
+    "static/media/1.jpg": "/Ishika-bisht/static/media/1.c5b5c10a1a173b14dd74.jpg",
+    "static/media/2.jpg": "/Ishika-bisht/static/media/2.9ef4a76bef929de6a6f7.jpg",
+    "static/media/7.jpeg": "/Ishika-bisht/static/media/7.e0dd3b044ed9a9a99464.jpeg",
+    "static/media/8.jpeg": "/Ishika-bisht/static/media/8.7f94a126c9273b781c75.jpeg",
+    "index.html": "/Ishika-bisht/index.html",
+    "main.ccb23fa0.css.map": "/Ishika-bisht/static/css/main.ccb23fa0.css.map",
+    "main.5706cef1.js.map": "/Ishika-bisht/static/js/main.5706cef1.js.map",
+    "453.692062c3.chunk.js.map": "/Ishika-bisht/static/js/453.692062c3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ccb23fa0.css",
+    "static/js/main.5706cef1.js"
+  ]
+}
