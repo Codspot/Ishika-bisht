@@ -1,26 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import VanillaTilt from "vanilla-tilt";
 import { useMediaQuery } from "react-responsive";
+import { cards } from "../data/card";
 
-import img1 from "../assets/images/1.jpg";
-import img2 from "../assets/images/2.jpg";
-import img3 from "../assets/images/3.jpg";
-import img4 from "../assets/images/4.jpg";
-import img5 from "../assets/images/5.jpg";
-import img6 from "../assets/images/6.jpg";
-import img7 from "../assets/images/7.jpeg";
-import img8 from "../assets/images/8.jpeg";
-
-const cards = [
-  { caption: "Golden Hour", src: img1, quote: "In a universe full of stars, you shine the brightest..." },
-  { caption: "You're Magic", src: img2, quote: "Like magic captured in a moment, you bring wonder..." },
-  { caption: "Enchanted Dreams", src: img3, quote: "Dreams are made of moments like these..." },
-  { caption: "Timeless Beauty", src: img4, quote: "Time stands still when beauty meets grace..." },
-  { caption: "Radiant Soul", src: img5, quote: "Your laughter is the melody that makes hearts sing..." },
-  { caption: "Playful Light", src: img6, quote: "You light up the world with laughter and love..." },
-  { caption: "Winter Glow", src: img7, quote: "Like winter sunshine, your presence brings warmth..." },
-  { caption: "Festive Radiance", src: img8, quote: "You bring color and joy to every moment..." },
-];
 
 export default function Carousel({ setMainImage, setQuote }) {
   const carouselRef = useRef(null);
