@@ -1,6 +1,6 @@
-// components/Carousel.jsx
 import { useEffect, useRef, useState } from "react";
 import VanillaTilt from "vanilla-tilt";
+import { useMediaQuery } from "react-responsive";
 
 import img1 from "../assets/images/1.jpg";
 import img2 from "../assets/images/2.jpg";
@@ -12,59 +12,30 @@ import img7 from "../assets/images/7.jpeg";
 import img8 from "../assets/images/8.jpeg";
 
 const cards = [
-  {
-    caption: "Golden Hour",
-    src: img1,
-    quote:
-      "In a universe full of stars, you shine the brightest. Your beauty radiates from within, illuminating the lives of everyone around you.",
-  },
-  {
-    caption: "You're Magic",
-    src: img2,
-    quote:
-      "Like magic captured in a moment, you bring wonder to every space you enter. Your essence is pure enchantment.",
-  },
-  {
-    caption: "Enchanted Dreams",
-    src: img3,
-    quote:
-      "Dreams are made of moments like these, where your spirit dances with the light and creates something beautiful.",
-  },
-  {
-    caption: "Timeless Beauty",
-    src: img4,
-    quote:
-      "Time stands still when beauty meets grace. You are a masterpiece painted by the universe itself.",
-  },
-  {
-    caption: "Radiant Soul",
-    src: img5,
-    quote:
-      "Your laughter is the melody that makes hearts sing. You are joy personified, a radiant soul that lights up the world.",
-  },
-  {
-    caption: "Playful Light",
-    src: img6,
-    quote:
-      "You light up the world with the kind of laughter and love that makes everything better.",
-  },
-  {
-    caption: "Winter Glow",
-    src: img7,
-    quote:
-      "Like winter sunshine, your presence brings warmth even in the coldest moments.",
-  },
-  {
-    caption: "Festive Radiance",
-    src: img8,
-    quote:
-      "You bring color and joy to every moment — like a celebration that never ends.",
-  },
+  { caption: "Golden Hour", src: img1, quote: "In a universe full of stars, you shine the brightest..." },
+  { caption: "You're Magic", src: img2, quote: "Like magic captured in a moment, you bring wonder..." },
+  { caption: "Enchanted Dreams", src: img3, quote: "Dreams are made of moments like these..." },
+  { caption: "Timeless Beauty", src: img4, quote: "Time stands still when beauty meets grace..." },
+  { caption: "Radiant Soul", src: img5, quote: "Your laughter is the melody that makes hearts sing..." },
+  { caption: "Playful Light", src: img6, quote: "You light up the world with laughter and love..." },
+  { caption: "Winter Glow", src: img7, quote: "Like winter sunshine, your presence brings warmth..." },
+  { caption: "Festive Radiance", src: img8, quote: "You bring color and joy to every moment..." },
 ];
 
 export default function Carousel({ setMainImage, setQuote }) {
   const carouselRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
+  const isDesktopOrLaptop = useMediaQuery({ query: "(min-width: 1224px)" });
+
+  const cardWidthValue = isBigScreen ? 240 : isDesktopOrLaptop ? 220 : 100;
+  const cardWidth = `${cardWidthValue}px`;
+  const cardTotalWidth = cardWidthValue + 16; // gap-4 = 1rem = 16px
+  const cardHeight = isBigScreen ? "300px" : isDesktopOrLaptop ? "260px" : "150px";
+  const carouselWidth = isBigScreen ? "1000px" : isDesktopOrLaptop ? "900px" : "";
+
+  const duplicatedCards = [...cards, ...cards]; // Make it loop-like
 
   useEffect(() => {
     VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
@@ -74,52 +45,64 @@ export default function Carousel({ setMainImage, setQuote }) {
       "max-glare": 0.3,
     });
 
-    // Set initial image & quote
     setMainImage(cards[0].src);
     setQuote(cards[0].quote);
   }, []);
 
   useEffect(() => {
+    const container = carouselRef.current;
+    let scrollLeft = 0;
+    const scrollStep = cardTotalWidth;
+
     const interval = setInterval(() => {
-      const nextIndex = (currentIndex + 1) % cards.length;
-      updateCard(nextIndex);
+      if (!container) return;
+
+      scrollLeft += scrollStep;
+
+      // Reset when nearing the end of the duplicated list
+      if (scrollLeft >= container.scrollWidth / 2) {
+        scrollLeft = 0;
+        container.scrollTo({ left: scrollLeft }); // Instant reset
+      } else {
+        container.scrollTo({ left: scrollLeft, behavior: "smooth" });
+      }
+
+      const visibleIndex = Math.floor((scrollLeft % (cards.length * cardTotalWidth)) / cardTotalWidth);
+      setCurrentIndex(visibleIndex);
+      setMainImage(cards[visibleIndex].src);
+      setQuote(cards[visibleIndex].quote);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, [cardTotalWidth]);
 
   const updateCard = (index) => {
-    setCurrentIndex(index);
-    setMainImage(cards[index].src);
-    setQuote(cards[index].quote);
+    const container = carouselRef.current;
+    const scrollTo = index * cardTotalWidth;
+    container.scrollTo({ left: scrollTo, behavior: "smooth" });
 
-    const scrollPos =
-      index * 220 - carouselRef.current.offsetWidth / 2 + 110;
-    carouselRef.current.scrollTo({
-      left: Math.max(0, scrollPos),
-      behavior: "smooth",
-    });
+    setCurrentIndex(index % cards.length);
+    setMainImage(cards[index % cards.length].src);
+    setQuote(cards[index % cards.length].quote);
   };
 
   return (
     <>
-      {/* Carousel container */}
       <div className="absolute bottom-8 left-0 md:left-16 w-full md:w-auto max-w-[96%] md:max-w-6xl px-4 md:px-0 z-20">
-
         <div className="relative">
           <div
             ref={carouselRef}
-            className="flex gap-4 overflow-x-hidden py-4 bg-red"
+            className="flex gap-4 overflow-x-auto py-4 scrollbar-hide"
+            style={{ width: carouselWidth }}
             id="carousel-container"
           >
-            {cards.map((card, index) => (
+            {duplicatedCards.map((card, index) => (
               <div
                 key={index}
-                className={`memory-card flex-shrink-0 w-[200px] h-[250px] relative cursor-pointer ${
-                  index === currentIndex ? "active-card" : ""
-                }`}
+                className="memory-card flex-shrink-0 relative cursor-pointer"
                 onClick={() => updateCard(index)}
                 data-tilt
+                style={{ width: cardWidth, height: cardHeight }}
               >
                 <img
                   src={card.src}
@@ -131,7 +114,7 @@ export default function Carousel({ setMainImage, setQuote }) {
                 </div>
                 <div
                   className={`absolute inset-0 border-2 border-pink-400 rounded-lg transition-opacity duration-300 ${
-                    index === currentIndex ? "opacity-100" : "opacity-0"
+                    index % cards.length === currentIndex ? "opacity-100" : "opacity-0"
                   }`}
                 ></div>
               </div>
@@ -140,7 +123,7 @@ export default function Carousel({ setMainImage, setQuote }) {
         </div>
       </div>
 
-      {/* Background sync with carousel */}
+      {/* Background */}
       <div className="absolute inset-0 opacity-30 transition-all duration-1000 z-0">
         <img
           className="w-full h-full object-cover"
