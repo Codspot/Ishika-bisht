@@ -6,7 +6,7 @@ import sapphire from "../assets/music/Sapphire.mp3";
 import cheri from "../assets/music/Cheri-Cheri-Lady.mp3";
 import masoom from "../assets/music/Masoom.mp3";
 
-const tracks = [masoom, sapphire, cheri];
+const tracks = [sapphire, cheri, masoom];
 
 export default function MusicToggle() {
   const [isPlaying, setIsPlaying] = useState(false);
