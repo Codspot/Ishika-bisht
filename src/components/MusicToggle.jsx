@@ -5,17 +5,27 @@ import { useMediaQuery } from "react-responsive";
 import sapphire from "../assets/music/Sapphire.mp3";
 import cheri from "../assets/music/Cheri-Cheri-Lady.mp3";
 import masoom from "../assets/music/Masoom.mp3";
+import Mere from "../assets/music/Mere Wargi.mp3";
+import Qatal from "../assets/music/Qatal.mp3";
+import Attraction from "../assets/music/Attraction.mp3";
+import Feelings from "../assets/music/Feelings.mp3";
+
 
 const trackList = [
   { name: "Masoom", src: masoom },
   { name: "Sapphire", src: sapphire },
   { name: "Cheri Cheri Lady", src: cheri },
+  { name: "Mere Wargi", src: Mere },
+  { name: "Qatal", src: Qatal },
+  { name: "Attraction", src: Attraction },
+  { name: "Feelings", src: Feelings },
+
 ];
 
 export default function MusicToggle() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [wasPlayingBeforeHide, setWasPlayingBeforeHide] = useState(false);
-  const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
+  const [currentTrackIndex, setCurrentTrackIndex] = useState(() => Math.floor(Math.random() * trackList.length));
   const [sound, setSound] = useState(null);
 
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1023px)" });
@@ -27,7 +37,10 @@ export default function MusicToggle() {
       src: [currentTrack.src],
       volume: 0.5,
       onend: () => {
-        const nextIndex = (currentTrackIndex + 1) % trackList.length;
+        let nextIndex;
+        do {
+          nextIndex = Math.floor(Math.random() * trackList.length);
+        } while (nextIndex === currentTrackIndex && trackList.length > 1);
         setCurrentTrackIndex(nextIndex);
       },
     });
@@ -71,12 +84,11 @@ export default function MusicToggle() {
 
   return (
     <div
-  className={`z-30 absolute ${
-    isTabletOrMobile
-      ? "top-[20%] left-1/2 -translate-x-1/2"  // below countdown visually
-      : "top-6 right-6"
-  }`}
->
+      className={`z-30 absolute ${isTabletOrMobile
+        ? "top-[20%] left-1/2 -translate-x-1/2"  // below countdown visually
+        : "top-6 right-6"
+        }`}
+    >
 
 
       <button
