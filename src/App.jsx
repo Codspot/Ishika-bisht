@@ -7,6 +7,8 @@ import MainImage from "./components/MainImage";
 import Carousel from "./components/Carousel";
 import MusicToggle from "./components/MusicToggle";
 import PhotoModal from "./components/PhotoModal";
+import SocialLinks from "./components/SocialLinks";
+
 
 function App() {
   const [quote, setQuote] = useState("");
@@ -18,6 +20,7 @@ function App() {
       
       <Countdown />
       <MusicToggle />
+      <SocialLinks/>
       <div className="relative h-full w-full flex items-center  px-4">
   <QuoteSection quote={quote} />
   <MainImage src={mainImage} />

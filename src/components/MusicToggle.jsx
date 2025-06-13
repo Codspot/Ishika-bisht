@@ -2,25 +2,44 @@ import { useEffect, useState } from "react";
 import { Howl } from "howler";
 import { useMediaQuery } from "react-responsive";
 
-import sapphire from "../assets/music/Sapphire.mp3";
-import cheri from "../assets/music/Cheri-Cheri-Lady.mp3";
-import masoom from "../assets/music/Masoom.mp3";
-import Mere from "../assets/music/Mere Wargi.mp3";
-import Qatal from "../assets/music/Qatal.mp3";
-import Attraction from "../assets/music/Attraction.mp3";
-import Feelings from "../assets/music/Feelings.mp3";
+import AasaKooda from "../assets/music/Aasa Kooda (PenduJatt.Com.Se).mp3"; // Aasa Kooda (PenduJatt.Com.Se)
+import CheriCheriLady from "../assets/music/Cheri-Cheri-Lady.mp3"; // Cheri-Cheri-Lady
+import Chuttamalle from "../assets/music/Chuttamalle (PenduJatt.Com.Se).mp3"; // Chuttamalle (PenduJatt.Com.Se)
+import Feelings from "../assets/music/Feelings.mp3"; // Feelings
+import MarBaitha from "../assets/music/Mar Baitha - Abhijeet Srivastava 320KBPS .mp3"; // Mar Baitha - Abhijeet Srivastava 320KBPS
+import Masoom from "../assets/music/Masoom.mp3"; // Masoom
+import MereWargi from "../assets/music/Mere Wargi.mp3"; // Mere Wargi
+import ShakeItToTheMax from "../assets/music/MOLIY_Silent_Addy_Skillibeng_Shenseea_-_Shake_It_To_The_Max.mp3"; // MOLIY_Silent_Addy_Skillibeng_Shenseea_-_Shake_It_To_The_Max
+import PalPal from "../assets/music/Pal Pal - Afusic 320 Kbps.mp3"; // Pal Pal - Afusic 320 Kbps
+import Qatal from "../assets/music/Qatal.mp3"; // Qatal
+import Sapphire from "../assets/music/Sapphire.mp3"; // Sapphire
+import Shaky from "../assets/music/Shaky-(SambalpuriStar.In).mp3"; // Shaky-(SambalpuriStar.In)
+import SheesheWaliChunni from "../assets/music/Sheeshe Wali Chunni Glory 320 Kbps.mp3"; // Sheeshe Wali Chunni Glory 320 Kbps
+import TereNainonMein from "../assets/music/Tere Nainon Mein (PenduJatt.Com.Se).mp3"; // Tere Nainon Mein (PenduJatt.Com.Se)
+import TikTik from "../assets/music/TIK TIK(KoshalWorld.Com).mp3"; // TIK TIK(KoshalWorld.Com)
+import VekhSohneyaa from "../assets/music/Vekh Sohneyaa (PenduJatt.Com.Se).mp3"; // Vekh Sohneyaa (PenduJatt.Com.Se)
+
 
 
 const trackList = [
-  { name: "Masoom", src: masoom },
-  { name: "Sapphire", src: sapphire },
-  { name: "Cheri Cheri Lady", src: cheri },
-  { name: "Mere Wargi", src: Mere },
-  { name: "Qatal", src: Qatal },
-  { name: "Attraction", src: Attraction },
+  { name: "Aasa Kooda (PenduJatt.Com.Se)", src: AasaKooda },
+  { name: "Cheri-Cheri-Lady", src: CheriCheriLady },
+  { name: "Chuttamalle (PenduJatt.Com.Se)", src: Chuttamalle },
   { name: "Feelings", src: Feelings },
-
+  { name: "Mar Baitha - Abhijeet Srivastava 320KBPS", src: MarBaitha },
+  { name: "Masoom", src: Masoom },
+  { name: "Mere Wargi", src: MereWargi },
+  { name: "MOLIY_Silent_Addy_Skillibeng_Shenseea_-_Shake_It_To_The_Max", src: ShakeItToTheMax },
+  { name: "Pal Pal - Afusic 320 Kbps", src: PalPal },
+  { name: "Qatal", src: Qatal },
+  { name: "Sapphire", src: Sapphire },
+  { name: "Shaky-(SambalpuriStar.In)", src: Shaky },
+  { name: "Sheeshe Wali Chunni Glory 320 Kbps", src: SheesheWaliChunni },
+  { name: "Tere Nainon Mein (PenduJatt.Com.Se)", src: TereNainonMein },
+  { name: "TIK TIK(KoshalWorld.Com)", src: TikTik },
+  { name: "Vekh Sohneyaa (PenduJatt.Com.Se)", src: VekhSohneyaa },
 ];
+
 
 export default function MusicToggle() {
   const [isPlaying, setIsPlaying] = useState(false);
