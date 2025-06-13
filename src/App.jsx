@@ -15,14 +15,15 @@ function App() {
   return (
     <div className="relative h-screen w-screen overflow-hidden">
       <Background />
+      
       <Countdown />
+      <MusicToggle />
       <div className="relative h-full w-full flex items-center  px-4">
   <QuoteSection quote={quote} />
   <MainImage src={mainImage} />
 </div>
 
       <Carousel setMainImage={setMainImage} setQuote={setQuote} />
-      <MusicToggle />
       <PhotoModal />
     </div>
   );
