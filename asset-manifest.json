@@ -1,9 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.257a1595.css",
-    "main.js": "/static/js/main.5e27cc91.js",
+    "main.js": "/static/js/main.20f352b5.js",
     "static/js/453.9f566711.chunk.js": "/static/js/453.9f566711.chunk.js",
     "static/media/Masoom.mp3": "/static/media/Masoom.3f1e7df492755d5fb775.mp3",
+    "static/media/Qatal.mp3": "/static/media/Qatal.ec9bd785d2ac80d84d9b.mp3",
+    "static/media/Feelings.mp3": "/static/media/Feelings.18750bc4fd5fad96c126.mp3",
+    "static/media/Mere Wargi.mp3": "/static/media/Mere Wargi.bc7629ca95cd7f7d738a.mp3",
+    "static/media/Attraction.mp3": "/static/media/Attraction.14bfbfbeb3207e284386.mp3",
     "static/media/Sapphire.mp3": "/static/media/Sapphire.98740fa3fc69c53cb624.mp3",
     "static/media/Cheri-Cheri-Lady.mp3": "/static/media/Cheri-Cheri-Lady.f0bae0b3f21f923bd35e.mp3",
     "static/media/15.jpg": "/static/media/15.cb56042e708f659c3fec.jpg",
@@ -38,11 +42,11 @@
     "static/media/12.jpg": "/static/media/12.3f8d1ae2fbcd6dc8baf1.jpg",
     "index.html": "/index.html",
     "main.257a1595.css.map": "/static/css/main.257a1595.css.map",
-    "main.5e27cc91.js.map": "/static/js/main.5e27cc91.js.map",
+    "main.20f352b5.js.map": "/static/js/main.20f352b5.js.map",
     "453.9f566711.chunk.js.map": "/static/js/453.9f566711.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.257a1595.css",
-    "static/js/main.5e27cc91.js"
+    "static/js/main.20f352b5.js"
   ]
 }
