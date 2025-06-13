@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.257a1595.css",
-    "main.js": "/static/js/main.93f8c24f.js",
+    "main.css": "/static/css/main.5bd88686.css",
+    "main.js": "/static/js/main.f26194d3.js",
     "static/js/453.9f566711.chunk.js": "/static/js/453.9f566711.chunk.js",
     "static/media/Mar Baitha - Abhijeet Srivastava 320KBPS .mp3": "/static/media/Mar Baitha - Abhijeet Srivastava 320KBPS .d32e375539bdac830572.mp3",
     "static/media/Sheeshe Wali Chunni Glory 320 Kbps.mp3": "/static/media/Sheeshe Wali Chunni Glory 320 Kbps.9f6f7664c26922f76380.mp3",
@@ -50,12 +50,12 @@
     "static/media/21.jpg": "/static/media/21.e119fc57c81d7600297e.jpg",
     "static/media/12.jpg": "/static/media/12.3f8d1ae2fbcd6dc8baf1.jpg",
     "index.html": "/index.html",
-    "main.257a1595.css.map": "/static/css/main.257a1595.css.map",
-    "main.93f8c24f.js.map": "/static/js/main.93f8c24f.js.map",
+    "main.5bd88686.css.map": "/static/css/main.5bd88686.css.map",
+    "main.f26194d3.js.map": "/static/js/main.f26194d3.js.map",
     "453.9f566711.chunk.js.map": "/static/js/453.9f566711.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.257a1595.css",
-    "static/js/main.93f8c24f.js"
+    "static/css/main.5bd88686.css",
+    "static/js/main.f26194d3.js"
   ]
 }
