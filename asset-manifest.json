@@ -1,13 +1,22 @@
 {
   "files": {
     "main.css": "/static/css/main.257a1595.css",
-    "main.js": "/static/js/main.d6c185ce.js",
+    "main.js": "/static/js/main.93f8c24f.js",
     "static/js/453.9f566711.chunk.js": "/static/js/453.9f566711.chunk.js",
+    "static/media/Mar Baitha - Abhijeet Srivastava 320KBPS .mp3": "/static/media/Mar Baitha - Abhijeet Srivastava 320KBPS .d32e375539bdac830572.mp3",
+    "static/media/Sheeshe Wali Chunni Glory 320 Kbps.mp3": "/static/media/Sheeshe Wali Chunni Glory 320 Kbps.9f6f7664c26922f76380.mp3",
+    "static/media/TIK TIK(KoshalWorld.Com).mp3": "/static/media/TIK TIK(KoshalWorld.Com).d35f864ffeaebb6960ef.mp3",
     "static/media/Qatal.mp3": "/static/media/Qatal.03ae5dae98de90ca600a.mp3",
+    "static/media/Pal Pal - Afusic 320 Kbps.mp3": "/static/media/Pal Pal - Afusic 320 Kbps.d05bd955048423535141.mp3",
+    "static/media/Tere Nainon Mein (PenduJatt.Com.Se).mp3": "/static/media/Tere Nainon Mein (PenduJatt.Com.Se).3c91226e2fd4cb10a49a.mp3",
+    "static/media/MOLIY_Silent_Addy_Skillibeng_Shenseea_-_Shake_It_To_The_Max.mp3": "/static/media/MOLIY_Silent_Addy_Skillibeng_Shenseea_-_Shake_It_To_The_Max.78141924d15a83fe16e3.mp3",
+    "static/media/Chuttamalle (PenduJatt.Com.Se).mp3": "/static/media/Chuttamalle (PenduJatt.Com.Se).fbf20257676d1a6581ca.mp3",
+    "static/media/Vekh Sohneyaa (PenduJatt.Com.Se).mp3": "/static/media/Vekh Sohneyaa (PenduJatt.Com.Se).a6417869d63ae707a152.mp3",
+    "static/media/Aasa Kooda (PenduJatt.Com.Se).mp3": "/static/media/Aasa Kooda (PenduJatt.Com.Se).f6f80569db2082f75362.mp3",
     "static/media/Masoom.mp3": "/static/media/Masoom.3f1e7df492755d5fb775.mp3",
+    "static/media/Shaky-(SambalpuriStar.In).mp3": "/static/media/Shaky-(SambalpuriStar.In).cf3d70e384b24d4e3f26.mp3",
     "static/media/Feelings.mp3": "/static/media/Feelings.18750bc4fd5fad96c126.mp3",
     "static/media/Mere Wargi.mp3": "/static/media/Mere Wargi.bc7629ca95cd7f7d738a.mp3",
-    "static/media/Attraction.mp3": "/static/media/Attraction.14bfbfbeb3207e284386.mp3",
     "static/media/Sapphire.mp3": "/static/media/Sapphire.98740fa3fc69c53cb624.mp3",
     "static/media/Cheri-Cheri-Lady.mp3": "/static/media/Cheri-Cheri-Lady.f0bae0b3f21f923bd35e.mp3",
     "static/media/15.jpg": "/static/media/15.cb56042e708f659c3fec.jpg",
@@ -42,11 +51,11 @@
     "static/media/12.jpg": "/static/media/12.3f8d1ae2fbcd6dc8baf1.jpg",
     "index.html": "/index.html",
     "main.257a1595.css.map": "/static/css/main.257a1595.css.map",
-    "main.d6c185ce.js.map": "/static/js/main.d6c185ce.js.map",
+    "main.93f8c24f.js.map": "/static/js/main.93f8c24f.js.map",
     "453.9f566711.chunk.js.map": "/static/js/453.9f566711.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.257a1595.css",
-    "static/js/main.d6c185ce.js"
+    "static/js/main.93f8c24f.js"
   ]
 }
