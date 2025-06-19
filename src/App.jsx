@@ -15,21 +15,25 @@ function App() {
   const [mainImage, setMainImage] = useState("");
 
   return (
-    <div className="relative h-screen w-screen overflow-hidden">
-      <Background />
-      
-      <Countdown />
-      <MusicToggle />
-      <SocialLinks/>
-      <div className="relative h-full w-full flex items-center  px-4">
-  <QuoteSection quote={quote} />
-  <MainImage src={mainImage} />
-</div>
+    <div className="relative w-screen h-screen overflow-hidden flex flex-col">
+      {/* Scrollable content */}
+      <div className="flex-1 overflow-y-auto">
+        <Background />
+        <Countdown />
+        <MusicToggle />
+        <SocialLinks />
+        <div className="relative h-full w-full flex items-center px-4">
+          <QuoteSection quote={quote} />
+          <MainImage src={mainImage} />
+        </div>
+      </div>
 
+      {/* Fixed bottom carousel */}
       <Carousel setMainImage={setMainImage} setQuote={setQuote} />
       <PhotoModal />
     </div>
   );
 }
+
 
 export default App;

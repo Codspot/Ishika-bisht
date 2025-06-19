@@ -3,23 +3,20 @@ import VanillaTilt from "vanilla-tilt";
 import { useMediaQuery } from "react-responsive";
 import { cards } from "../data/card";
 
-
 export default function Carousel({ setMainImage, setQuote }) {
   const carouselRef = useRef(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [carouselCards, setCarouselCards] = useState([...cards]);
+  const [translateX, setTranslateX] = useState(0);
+  const [isSliding, setIsSliding] = useState(false);
   const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
   const isDesktopOrLaptop = useMediaQuery({ query: "(min-width: 1224px)" });
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
   const cardWidthValue = isBigScreen ? 240 : isDesktopOrLaptop ? 220 : 100;
   const cardWidth = `${cardWidthValue}px`;
-  const cardTotalWidth = cardWidthValue + 16; // gap-4 = 1rem = 16px
+  const cardTotalWidth = cardWidthValue + 16;
   const cardHeight = isBigScreen ? "300px" : isDesktopOrLaptop ? "260px" : "150px";
   const carouselWidth = isBigScreen ? "1000px" : isDesktopOrLaptop ? "900px" : "";
-
-  // Duplicate cards for seamless infinite scroll
-  const displayCards = [cards[cards.length - 1], ...cards, cards[0]];
-  const [transition, setTransition] = useState(true);
 
   useEffect(() => {
     VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
@@ -32,46 +29,39 @@ export default function Carousel({ setMainImage, setQuote }) {
     setQuote(cards[0].quote);
   }, []);
 
-  // Auto-scroll
   useEffect(() => {
     const interval = setInterval(() => {
-      goTo(currentIndex + 1);
-    }, 3000);
-    return () => clearInterval(interval);
-  });
+      setIsSliding(true);
+      setTranslateX(-cardTotalWidth);
 
-  // Handle seamless loop
-  useEffect(() => {
-    if (currentIndex === cards.length) {
       setTimeout(() => {
-        setTransition(false);
-        setCurrentIndex(0);
-      }, 300);
-    } else if (currentIndex === -1) {
-      setTimeout(() => {
-        setTransition(false);
-        setCurrentIndex(cards.length - 1);
-      }, 300);
-    } else {
-      setTransition(true);
-    }
-    setMainImage(cards[(currentIndex + cards.length) % cards.length].src);
-    setQuote(cards[(currentIndex + cards.length) % cards.length].quote);
-  }, [currentIndex]);
+        setCarouselCards((prev) => {
+          const newCards = [...prev];
+          const first = newCards.shift();
+          newCards.push(first);
+          return newCards;
+        });
+
+        setTranslateX(0);
+        setIsSliding(false);
+      }, 300); // must match transition time
+
+      const nextCard = carouselCards[1 % carouselCards.length];
+      setMainImage(nextCard?.src || cards[0].src);
+      setQuote(nextCard?.quote || cards[0].quote);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [carouselCards]);
 
   const goTo = (idx) => {
-    setTransition(true);
-    setCurrentIndex(idx);
-  };
-
-  const handleTransitionEnd = () => {
-    if (currentIndex === cards.length) {
-      setTransition(false);
-      setCurrentIndex(0);
-    } else if (currentIndex === -1) {
-      setTransition(false);
-      setCurrentIndex(cards.length - 1);
-    }
+    setCarouselCards((prev) => {
+      const newCards = [...prev];
+      const rotated = newCards.splice(idx).concat(newCards);
+      return rotated;
+    });
+    setMainImage(carouselCards[(idx + 1) % carouselCards.length]?.src || cards[0].src);
+    setQuote(carouselCards[(idx + 1) % carouselCards.length]?.quote || cards[0].quote);
   };
 
   return (
@@ -88,17 +78,16 @@ export default function Carousel({ setMainImage, setQuote }) {
             className="flex gap-4 py-4 scrollbar-hide"
             style={{
               width: carouselWidth,
-              transform: `translateX(-${(currentIndex + 1) * cardTotalWidth}px)` ,
-              transition: transition ? "transform 0.3s cubic-bezier(0.4,0,0.2,1)" : "none"
+              transform: `translateX(${translateX}px)`,
+              transition: isSliding ? "transform 300ms ease-in-out" : "none",
             }}
-            onTransitionEnd={handleTransitionEnd}
             id="carousel-container"
           >
-            {displayCards.map((card, index) => (
+            {carouselCards.map((card, index) => (
               <div
                 key={index}
                 className="memory-card flex-shrink-0 relative cursor-pointer bg-white/30 backdrop-blur-md rounded-xl transition-all duration-300"
-                onClick={() => goTo(index - 1)}
+                onClick={() => goTo(index)}
                 data-tilt
                 style={{ width: cardWidth, height: cardHeight, borderRadius: '1rem' }}
               >
@@ -113,7 +102,7 @@ export default function Carousel({ setMainImage, setQuote }) {
                 </div>
                 <div
                   className={`absolute inset-0 border-2 border-pink-400 rounded-xl transition-opacity duration-300 ${
-                    (index - 1 + cards.length) % cards.length === currentIndex ? "opacity-100" : "opacity-0"
+                    index === 0 ? "opacity-100" : "opacity-0"
                   }`}
                 ></div>
               </div>
@@ -126,7 +115,7 @@ export default function Carousel({ setMainImage, setQuote }) {
       <div className="absolute inset-0 opacity-30 transition-all duration-1000 z-0">
         <img
           className="w-full h-full object-cover"
-          src={cards[(currentIndex + cards.length) % cards.length].src}
+          src={carouselCards[0]?.src || cards[0].src}
           alt="Background"
         />
         <div className="absolute inset-0 bg-pink-500/40"></div>

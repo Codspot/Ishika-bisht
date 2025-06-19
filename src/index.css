@@ -6,6 +6,18 @@
   display: none;
 }
 
+/* styles.css or global.css */
+html, body {
+  height: 100%;
+}
+
+@supports (height: 100dvh) {
+  .safe-screen {
+    min-height: calc(100dvh - 100px); /* mobile safe area minus carousel */
+  }
+}
+
+
 /* globals.css or index.css */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
