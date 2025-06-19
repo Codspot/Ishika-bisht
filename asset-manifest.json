@@ -1,9 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.5a6b4e9e.css",
-    "main.js": "/static/js/main.e84c4593.js",
+    "main.css": "/static/css/main.59729fb6.css",
+    "main.js": "/static/js/main.e8156440.js",
     "static/js/453.9f566711.chunk.js": "/static/js/453.9f566711.chunk.js",
-    "static/media/Mar Baitha - Abhijeet Srivastava 320KBPS .mp3": "/static/media/Mar Baitha - Abhijeet Srivastava 320KBPS .d32e375539bdac830572.mp3",
     "static/media/Sheeshe Wali Chunni Glory 320 Kbps.mp3": "/static/media/Sheeshe Wali Chunni Glory 320 Kbps.9f6f7664c26922f76380.mp3",
     "static/media/TIK TIK(KoshalWorld.Com).mp3": "/static/media/TIK TIK(KoshalWorld.Com).d35f864ffeaebb6960ef.mp3",
     "static/media/Qatal.mp3": "/static/media/Qatal.03ae5dae98de90ca600a.mp3",
@@ -49,13 +48,14 @@
     "static/media/19.jpg": "/static/media/19.00452092b4b41917661d.jpg",
     "static/media/21.jpg": "/static/media/21.e119fc57c81d7600297e.jpg",
     "static/media/12.jpg": "/static/media/12.3f8d1ae2fbcd6dc8baf1.jpg",
+    "static/media/disc.png": "/static/media/disc.80411c014c067657c5a3.png",
     "index.html": "/index.html",
-    "main.5a6b4e9e.css.map": "/static/css/main.5a6b4e9e.css.map",
-    "main.e84c4593.js.map": "/static/js/main.e84c4593.js.map",
+    "main.59729fb6.css.map": "/static/css/main.59729fb6.css.map",
+    "main.e8156440.js.map": "/static/js/main.e8156440.js.map",
     "453.9f566711.chunk.js.map": "/static/js/453.9f566711.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5a6b4e9e.css",
-    "static/js/main.e84c4593.js"
+    "static/css/main.59729fb6.css",
+    "static/js/main.e8156440.js"
   ]
 }
