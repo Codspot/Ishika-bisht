@@ -14,7 +14,7 @@ module.exports = {
         float: "float 6s ease-in-out infinite",
         "float-slow": "float 8s ease-in-out infinite",
         "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        "spin-slow": "spin 8s linear infinite",
+        'spin-slow': 'spin 8s linear infinite',
         sparkle: "sparkle 2s linear infinite",
         "fade-in": "fadeIn 2s ease-in forwards",
         typing: "typing 3.5s steps(40, end)",
@@ -40,6 +40,11 @@ module.exports = {
         "blink-caret": {
           "from, to": { borderColor: "transparent" },
           "50%": { borderColor: "white" },
+        },
+        // ✅ Add spin here
+        spin: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
         },
       },
     },
