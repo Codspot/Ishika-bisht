@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.59729fb6.css",
-    "main.js": "/static/js/main.e8156440.js",
+    "main.css": "/static/css/main.d5b868c0.css",
+    "main.js": "/static/js/main.82acd531.js",
     "static/js/453.9f566711.chunk.js": "/static/js/453.9f566711.chunk.js",
     "static/media/Sheeshe Wali Chunni Glory 320 Kbps.mp3": "/static/media/Sheeshe Wali Chunni Glory 320 Kbps.9f6f7664c26922f76380.mp3",
     "static/media/TIK TIK(KoshalWorld.Com).mp3": "/static/media/TIK TIK(KoshalWorld.Com).d35f864ffeaebb6960ef.mp3",
@@ -19,6 +19,7 @@
     "static/media/Sapphire.mp3": "/static/media/Sapphire.98740fa3fc69c53cb624.mp3",
     "static/media/Cheri-Cheri-Lady.mp3": "/static/media/Cheri-Cheri-Lady.f0bae0b3f21f923bd35e.mp3",
     "static/media/15.jpg": "/static/media/15.cb56042e708f659c3fec.jpg",
+    "static/media/happy-birthday-254480.mp3": "/static/media/happy-birthday-254480.2aaaff618253e82b9f32.mp3",
     "static/media/16.jpg": "/static/media/16.b06b9dac808b100fabaf.jpg",
     "static/media/17.jpg": "/static/media/17.b0b2883e9ed8147532d7.jpg",
     "static/media/18.jpg": "/static/media/18.34a052b87561b36ba70f.jpg",
@@ -26,13 +27,22 @@
     "static/media/4.jpg": "/static/media/4.3d2d01bb5b23335d52fd.jpg",
     "static/media/11.jpeg": "/static/media/11.bfe0d83f0d13db3e3611.jpeg",
     "static/media/28.jpeg": "/static/media/28.e42cdabf806bb0645c27.jpeg",
+    "static/media/Pallavi-Happy-Birthday.mp3": "/static/media/Pallavi-Happy-Birthday.3d46f2267b831ec6c766.mp3",
+    "static/media/Birthday-Album-Song-Hindi.mp3": "/static/media/Birthday-Album-Song-Hindi.414c3e797a6891f3b671.mp3",
     "static/media/25.jpg": "/static/media/25.00ef696aad53c96f856c.jpg",
+    "static/media/Birthday-Hindi-Song-1.mp3": "/static/media/Birthday-Hindi-Song-1.2ba7b17cf6080e6e4abc.mp3",
     "static/media/14.jpg": "/static/media/14.13da98c01aa3dd67ea4d.jpg",
+    "static/media/Birthday-Hindi-Song.mp3": "/static/media/Birthday-Hindi-Song.72dc3f9e322733b32e8a.mp3",
     "static/media/3.jpg": "/static/media/3.5f7b9a1ae9a9ab36d5e4.jpg",
+    "static/media/A-Wish-You-Happy-Happy-Birthday.mp3": "/static/media/A-Wish-You-Happy-Happy-Birthday.e89e68285aa799e81574.mp3",
     "static/media/29.jpeg": "/static/media/29.d8a4195bc0245171d3d1.jpeg",
     "static/media/5.jpg": "/static/media/5.2760cc6e3f1bab3dca0d.jpg",
     "static/media/1.jpg": "/static/media/1.c5b5c10a1a173b14dd74.jpg",
+    "static/media/Happy-birthday-to-you-ji-Birthday-song-Hindi.mp3": "/static/media/Happy-birthday-to-you-ji-Birthday-song-Hindi.541aad531683447045e8.mp3",
     "static/media/2.jpg": "/static/media/2.9ef4a76bef929de6a6f7.jpg",
+    "static/media/an2.gif": "/static/media/an2.44bcb3afd082ce33d086.gif",
+    "static/media/Dadaji-Birthday-Song-Hindi-Birthday-Song.mp3": "/static/media/Dadaji-Birthday-Song-Hindi-Birthday-Song.ea628b20663764b8ae1c.mp3",
+    "static/media/an1.gif": "/static/media/an1.c4fa0c2c404ea4a18904.gif",
     "static/media/30.jpeg": "/static/media/30.b0d5e0a53856d27a5b3c.jpeg",
     "static/media/23.jpg": "/static/media/23.c4483aa4e69f1fd8e2f7.jpg",
     "static/media/20.jpg": "/static/media/20.033d56d32184ff75d561.jpg",
@@ -50,12 +60,12 @@
     "static/media/12.jpg": "/static/media/12.3f8d1ae2fbcd6dc8baf1.jpg",
     "static/media/disc.png": "/static/media/disc.80411c014c067657c5a3.png",
     "index.html": "/index.html",
-    "main.59729fb6.css.map": "/static/css/main.59729fb6.css.map",
-    "main.e8156440.js.map": "/static/js/main.e8156440.js.map",
+    "main.d5b868c0.css.map": "/static/css/main.d5b868c0.css.map",
+    "main.82acd531.js.map": "/static/js/main.82acd531.js.map",
     "453.9f566711.chunk.js.map": "/static/js/453.9f566711.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.59729fb6.css",
-    "static/js/main.e8156440.js"
+    "static/css/main.d5b868c0.css",
+    "static/js/main.82acd531.js"
   ]
 }
