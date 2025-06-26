@@ -7,13 +7,15 @@
 }
 
 /* styles.css or global.css */
-html, body {
+html,
+body {
   height: 100%;
 }
 
 @supports (height: 100dvh) {
   .safe-screen {
-    min-height: calc(100dvh - 100px); /* mobile safe area minus carousel */
+    min-height: calc(100dvh - 100px);
+    /* mobile safe area minus carousel */
   }
 }
 
@@ -22,6 +24,7 @@ html, body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -29,27 +32,79 @@ html, body {
 
 @layer utilities {
   @keyframes border-glow {
-    0%, 100% { box-shadow: 0 0 16px 4px #ff69b4, 0 0 32px 8px #fff3; }
-    50% { box-shadow: 0 0 32px 8px #ffb347, 0 0 48px 16px #fff6; }
+
+    0%,
+    100% {
+      box-shadow: 0 0 16px 4px #ff69b4, 0 0 32px 8px #fff3;
+    }
+
+    50% {
+      box-shadow: 0 0 32px 8px #ffb347, 0 0 48px 16px #fff6;
+    }
   }
+
   .animate-border-glow {
     animation: border-glow 1.5s infinite alternate;
   }
+
   @keyframes confetti {
-    0% { opacity: 1; transform: translateY(0) rotate(var(--tw-rotate, 0deg)); }
-    80% { opacity: 1; }
-    100% { opacity: 0.7; transform: translateY(100vh) rotate(calc(var(--tw-rotate, 0deg) + 360deg)); }
+    0% {
+      opacity: 1;
+      transform: translateY(0) rotate(var(--tw-rotate, 0deg));
+    }
+
+    80% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0.7;
+      transform: translateY(100vh) rotate(calc(var(--tw-rotate, 0deg) + 360deg));
+    }
   }
+
   .animate-confetti {
-    animation: confetti var(--tw-confetti-duration,3s) linear forwards;
+    animation: confetti var(--tw-confetti-duration, 3s) linear forwards;
   }
+
   @keyframes revolve-line {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
   }
+
   .animate-revolve-line {
     animation: revolve-line 2s linear infinite;
     transform-origin: 50% 50%;
   }
-}
 
+  @keyframes border-snake {
+    0% {
+      background-position: 0% 0%;
+    }
+
+    25% {
+      background-position: 100% 0%;
+    }
+
+    50% {
+      background-position: 100% 100%;
+    }
+
+    75% {
+      background-position: 0% 100%;
+    }
+
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+
+  .animate-border-snake {
+    animation: border-snake 2s linear infinite;
+  }
+}

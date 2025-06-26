@@ -15,6 +15,16 @@ import TereNainonMein from "../assets/music/Tere Nainon Mein (PenduJatt.Com.Se).
 import TikTik from "../assets/music/TIK TIK(KoshalWorld.Com).mp3";
 import VekhSohneyaa from "../assets/music/Vekh Sohneyaa (PenduJatt.Com.Se).mp3";
 
+// Birthday tracks
+import Birthday1 from "../assets/music/birthday/Pallavi-Happy-Birthday.mp3";
+import Birthday2 from "../assets/music/birthday/Happy-birthday-to-you-ji-Birthday-song-Hindi.mp3";
+import Birthday3 from "../assets/music/birthday/happy-birthday-254480.mp3";
+import Birthday4 from "../assets/music/birthday/Dadaji-Birthday-Song-Hindi-Birthday-Song.mp3";
+import Birthday5 from "../assets/music/birthday/Birthday-Hindi-Song.mp3";
+import Birthday6 from "../assets/music/birthday/Birthday-Hindi-Song-1.mp3";
+import Birthday7 from "../assets/music/birthday/Birthday-Album-Song-Hindi.mp3";
+import Birthday8 from "../assets/music/birthday/A-Wish-You-Happy-Happy-Birthday.mp3";
+
 export const trackList = [
   { name: "Aasa Kooda", sub: "PenduJatt", src: AasaKooda },
   { name: "Cheri-Cheri-Lady", sub: "80s Classic", src: CheriCheriLady },
@@ -32,3 +42,28 @@ export const trackList = [
   { name: "Tik Tik", sub: "KoshalWorld", src: TikTik },
   { name: "Vekh Sohneyaa", sub: "PenduJatt", src: VekhSohneyaa },
 ];
+
+export const birthdayTrackList = [
+  { name: "Happy Birthday (Pallavi)", sub: "Birthday Special", src: Birthday1 },
+  { name: "Happy Birthday to You Ji", sub: "Birthday Special", src: Birthday2 },
+  { name: "Happy Birthday (254480)", sub: "Birthday Special", src: Birthday3 },
+  { name: "Dadaji Birthday Song", sub: "Birthday Special", src: Birthday4 },
+  { name: "Birthday Hindi Song", sub: "Birthday Special", src: Birthday5 },
+  { name: "Birthday Hindi Song 1", sub: "Birthday Special", src: Birthday6 },
+  { name: "Birthday Album Song", sub: "Birthday Special", src: Birthday7 },
+  { name: "A Wish You Happy Happy Birthday", sub: "Birthday Special", src: Birthday8 },
+];
+
+// Set your birthday here (month is 0-indexed, e.g., June = 5)
+const BIRTHDAY_MONTH = 5; // June
+const BIRTHDAY_DATE = 27; // Set to 27 for tomorrow
+
+export function isBirthdayToday() {
+  const today = new Date();
+  // Only return true if it is the birthday AND the time is after midnight (00:00)
+  return (
+    today.getMonth() === BIRTHDAY_MONTH &&
+    today.getDate() === BIRTHDAY_DATE &&
+    today.getHours() >= 0 // after midnight
+  );
+}
